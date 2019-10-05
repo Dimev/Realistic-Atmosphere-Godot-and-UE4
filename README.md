@@ -6,7 +6,8 @@ A realistic atmosphere material for both the Godot game engine and Unreal Engine
 (more in the images folder)
 
 This resporitory provides code for adding realistic admospheres to godot and unreal engine 4.
-The size, color and intensity can all be tuned
+The size, color and intensity can all be tuned.
+
 For unreal engine 4, a project including all needed assets is given (for version 4.22.3)
 For godot, a standalone shader file is given, as well as a demo project
 
