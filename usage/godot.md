@@ -20,17 +20,20 @@ by rotating the MeshInstance, you can change the light direction.
 
 ### editing parameters
 you can freely edit the parameters of the ShaderMaterial, here's what they do
-- planet_radius:how big the planet is, affects how big the atmosphere is too
-- atmo_radius: 	 how big the outer sphere is, if set too low, it can cut off the atmosphere, giving an ugly effect
-- beta_ray:      rayleigh scattering paramater, determines the overall color of the atmosphere
-- beta_mie:      mie scattering parameter, determines the color (and intensity) of the blob around the sun
-- beta_e:        scale of the parameters (10^scale) before usage, all parameters are multpiplied with 10^beta_e. changing this can improve the look in many cases
-- g:             mie direction, how big the mie blob around the sun is
-- height_ray:    the height scale for rayleigh, how high the rayleigh scattering goes
-- height_mie:    height scale for mie, how high the mie scattering goes
-- steps_i:       primary ray steps, affects quality the most, 32 is a good default (more is better, but slower)
-- steps_l:       light ray steps, affects the sunset quality, 4 is the lowest before the quality becomes visibly worse (more is better, but slower)
-- intensity:     the light intensity, makes the atmosphere brighet
+
+| Parameter      | Description                                                                                                     
+|:---------------|:---------------------------------------------------------------------------------------------------------------- 
+| planet_radius  | how big the planet is, affects how big the atmosphere is too                                                    
+| atmo_radius 	 | how big the outer sphere is, if set too low, it can cut off the atmosphere, giving an ugly effect
+| beta_ray       | rayleigh scattering paramater, determines the overall color of the atmosphere
+| beta_mie       | mie scattering parameter, determines the color (and intensity) of the blob around the sun
+| beta_e         | scale of the parameters (10^scale) before usage, all parameters are multpiplied with 10^beta_e. changing this can improve the look in many cases
+| g              | mie direction, how big the mie blob around the sun is
+| height_ray     | the height scale for rayleigh, how high the rayleigh scattering goes
+| height_mie     | height scale for mie, how high the mie scattering goes
+| steps_i        | primary ray steps, affects quality the most, 32 is a good default (more is better, but slower)
+| steps_l        | light ray steps, affects the sunset quality, 4 is the lowest before the quality becomes visibly worse (more is better, but slower)
+| intensity      | the light intensity, makes the atmosphere brighet
 
 ### known issues
 with very big atmospheres, it can give strange artifacts when the camera goes too far away. 
