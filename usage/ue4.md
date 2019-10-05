@@ -5,7 +5,7 @@ There are 2 versions, a post process version and a material version.
 The material version is easier to use (automatically moves when the mesh moves, light direction changes when the mesh is rotated)
 
 ### getting the assets into UE4
-- download this resporitory and unzip it, move the contents of the project folder (project_4.22.3 or other version) to where the ue4 projects are stored.
+- download this resporitory and unzip it, find the zip file for your version, and extract it to where ue4 stores it's projects
 you can find this by opening the epic games launcher and right clicking any existing project, and press 'show in folder'
 - to transfer the files to a project, you'll first have to open the project you downloaded. 
 - **make sure the you convert the project to the correct version (if you want to use it in a 4.23.x project, convert the project to that engine version first**. I'll add newer versions in the future)
