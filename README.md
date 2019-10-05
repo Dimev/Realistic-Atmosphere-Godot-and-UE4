@@ -12,13 +12,10 @@ For unreal engine 4, a project including all needed assets is given (for version
 For godot, a standalone shader file is given, as well as a demo project
 
 ### usage
-The UE4 and Godot versions are used a bit differently, so I've created a seperate guide for them
-usage guides are here:
-[Godot](usage/godot.md) 
+The UE4 and Godot versions are used a bit differently, so I've created a seperate guide for them, both of which are here:
+[Godot](usage/godot.md) and [UE4](usage/ue4.md)
 
-[UE4](usage/ue4.md)
-
-The shadertoy verion can be found [here](https://www.shadertoy.com/view/wlBXWK), also by me.
+The shadertoy verion of this atmosphere can be found [here](https://www.shadertoy.com/view/wlBXWK), also by me.
 
 The code is based on the [implementation by scratchapixel](https://www.scratchapixel.com/lessons/procedural-generation-virtual-worlds/simulating-sky), with a few modifications to make it work from space, and to make it look nicer
 
