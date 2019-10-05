@@ -165,9 +165,6 @@ void fragment() {
 	float max_distance = length(pixel_position);
 	// get the camera vector (the ray direction)
 	vec3 camera_vector = VIEW;
-	// eliminate some depth buffer issues
-	//highp float planet_dist = ray_sphere_intersect(camera_position, camera_vector, planet_radius).x;
-	//max_distance = planet_dist > max_distance && length(camera_position) > max_depth_buffer_dist ? planet_dist : max_distance;
 	// calculate the atmosphere
 	ALBEDO = calculate_scattering(
 		camera_position, 
