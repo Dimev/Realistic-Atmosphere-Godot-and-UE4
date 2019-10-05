@@ -2,17 +2,17 @@ shader_type spatial;
 render_mode depth_test_disable, blend_add, unshaded;
 
 // the parameters
-uniform float planet_radius = 20.0;					// how big the planet is
-uniform float atmo_radius = 30.0; 					// how big the atmosphere is
+uniform float planet_radius = 20.0;			// how big the planet is
+uniform float atmo_radius = 30.0; 			// how big the atmosphere is
 uniform vec3 beta_ray = vec3(1.0, 2.0, 4.0); 		// rayleigh scattering paramater
-uniform vec3 beta_mie = vec3(1.0);					// mie scattering parameter
-uniform float beta_e = -1.0;							// scale of the parameters (10^scale)
-uniform float g = 0.8;								// mie direction
-uniform float height_ray = 1.0;						// the height scale for rayleigh
-uniform float height_mie = 0.5;						// height scale for mie
-uniform int steps_i = 32;							// primary ray steps, affects quality the most (more is better, but slower)
-uniform int steps_l = 4;							// light ray steps, affects the sunset quality
-uniform float intensity = 20.0;						// the light intensity
+uniform vec3 beta_mie = vec3(1.0);			// mie scattering parameter
+uniform float beta_e = -1.0;				// scale of the parameters (10^scale)
+uniform float g = 0.8;					// mie direction
+uniform float height_ray = 1.0;				// the height scale for rayleigh
+uniform float height_mie = 0.5;				// height scale for mie
+uniform int steps_i = 32;				// primary ray steps, affects quality the most (more is better, but slower)
+uniform int steps_l = 4;				// light ray steps, affects the sunset quality
+uniform float intensity = 20.0;				// the light intensity
 
 varying vec3 light_direction;
 varying vec3 camera_position;
@@ -165,9 +165,6 @@ void fragment() {
 	float max_distance = length(pixel_position);
 	// get the camera vector (the ray direction)
 	vec3 camera_vector = VIEW;
-	// eliminate some depth buffer issues
-	//highp float planet_dist = ray_sphere_intersect(camera_position, camera_vector, planet_radius).x;
-	//max_distance = planet_dist > max_distance && length(camera_position) > max_depth_buffer_dist ? planet_dist : max_distance;
 	// calculate the atmosphere
 	ALBEDO = calculate_scattering(
 		camera_position, 
