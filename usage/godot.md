@@ -1,5 +1,6 @@
 # Usage with godot
-How to get the atmosphere woking in godot
+How to get the atmosphere woking in godot.
+
 Works with both GLES 2 and GLES 3
 
 ### getting the assets into godot
