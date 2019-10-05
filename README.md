@@ -23,5 +23,6 @@ The shadertoy verion can be found [here](https://www.shadertoy.com/view/wlBXWK),
 The code is based on the [implementation by scratchapixel](https://www.scratchapixel.com/lessons/procedural-generation-virtual-worlds/simulating-sky), with a few modifications to make it work from space, and to make it look nicer
 
 ### license
-The assets are shared under the MIT license, more detail in the LICENSE file
+The assets are shared under the MIT license, more detail in the LICENSE file.
+
 If you use this in a game or other software, I'm fine with being credited with "Atmosphere by Dimas Leenman, Shared under the MIT license" somewhere in the credits.
