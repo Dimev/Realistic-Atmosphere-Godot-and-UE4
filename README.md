@@ -5,6 +5,10 @@ A realistic atmosphere material for both the Godot game engine and Unreal Engine
 ![planet_3](images/planet_3.png)
 (more in the images folder)
 
+Showcase videos for [godot](https://youtu.be/mKg426Q8iwM) and [ue4](https://youtu.be/2If8QCHxWA4)
+
+There's also a [shadertoy version](https://www.shadertoy.com/view/wlBXWK).
+
 This resporitory provides code for adding realistic admospheres to godot and unreal engine 4.
 The size, color and intensity can all be tuned.
 
