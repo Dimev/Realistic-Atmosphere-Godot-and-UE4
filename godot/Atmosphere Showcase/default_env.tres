@@ -1,0 +1,14 @@
+[gd_resource type="Environment" load_steps=2 format=2]
+
+[sub_resource type="ProceduralSky" id=1]
+
+[resource]
+background_mode = 1
+background_sky = SubResource( 1 )
+tonemap_mode = 3
+tonemap_white = 16.0
+auto_exposure_scale = 0.1
+auto_exposure_speed = 64.0
+glow_enabled = true
+glow_bloom = 1.0
+glow_bicubic_upscale = true
