@@ -15,7 +15,7 @@ you can find this by opening the epic games launcher and right clicking any exis
 - when migrating, find the content folder of the project you want to export the assets to
 - select this folder and migrate the files, they should now work
 
-### adding the atmosphere to your scene - material version
+### adding the atmosphere to your scene - material version (atmo_non_post)
 - drag the atmosphere mesh into the scene
 - scale it until the atmopshere becomes fully visible
 - it uses the atmosphere_instance material instance, you can edit the parameters there
@@ -23,7 +23,7 @@ you can find this by opening the epic games launcher and right clicking any exis
 - drag a new atmosphere_mesh into the scene, scale it, and set it's material to the newly created material instance
 - you can now edit the new material instance to change the looks of the atmosphere
 
-### adding the atmosphere to your scene - post process version
+### adding the atmosphere to your scene - post process version (not supported in the newer demo)
 - put a post process volume in your scene (if you don't already have one) and set it to unbound (so the atmosphere is visible everywhere)
 - recommended: create a new material instance, and set the atmosphere post process material as the parent
 - under the post proces volume-> post process materials, add a new asset reference and select the atmosphere post process material (or the material instance if you made one)
@@ -50,6 +50,9 @@ you can freely edit the parameters of the Material, here's what they do
 | height_mie     | height scale for mie, how high the mie scattering goes
 | steps_i        | primary ray steps, affects quality the most, 32 is a good default (more is better, but slower)
 | steps_l        | light ray steps, affects the sunset quality, 4 is the lowest before the quality becomes visibly worse (more is better, but slower)
-| intensity      | the light intensity, makes the atmosphere brighet
+| intensity      | the light intensity, makes the atmosphere brigher
+| density_multiplier | makes the atmosphere block more of the background
 | light_direction| the direction of the light (post process only, as it's not needed with the material version)
 | planet_position| where the atmosphere is, in world space (post process only)
+
+There's also a proportional version of the atmosphere. This makes most parameters dependant on the planet and atmo radius, making it easier to change the size of the atmosphere
