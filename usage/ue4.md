@@ -39,6 +39,11 @@ with the post process version, you have to change the light_direction parameter.
 ### skylights
 There are skylight versions of both the non_post and proportional atmospheres. These add light to objects inside the atmosphere as if they are receiving light from a skylight. These need to have the exact same settings as the atmosphere, and also need to be applied to the atmosphere_mesh. They also have a shadowing_amount, which determines how much darker a face is that's pointing away from the atmosphere. There's also the option to use distance fields for AO, but this has not been tested, so please report any problems with this.
 
+### depth stencil
+It's possible to use the depth stencil value to determine how much an object is affected by the atmosphere.
+For this to work you need to set custom depth stencil pass to Enabled With stencil (Engine->Rendering->postprocessing)
+To use it enable CustomDepthPass on your mesh(es), and change the depth stencil value. 0 means fully affected, 255 means not affected by the atmosphere, and anything inbetween is possible
+
 ### editing parameters
 you can freely edit the parameters of the Material, here's what they do
 
