@@ -1,21 +1,22 @@
 # Usage with UE4
 How to get the atmosphere woking in UE4.
 
-There are 2 versions, a post process version and a material version.
-The material version is easier to use (automatically moves when the mesh moves, light direction changes when the mesh is rotated)
+There are 2 versions, Proportional and non_post
+The proportional version is easier to set up, as it automatically changes the parameters according to the planet_radius
+the fully_blocking and post process versions are not supported, because they don't work correctly (post process version is only in the older demo)
 
 ### getting the assets into UE4
 - download this resporitory and unzip it, find the zip file for your version, and extract it to where ue4 stores it's projects
 you can find this by opening the epic games launcher and right clicking any existing project, and press 'show in folder'
 - to transfer the files to a project, you'll first have to open the project you downloaded. 
-- **make sure the you convert the project to the correct version (if you want to use it in a 4.23.x project, convert the project to that engine version first**. I'll add newer versions in the future)
+- **make sure the you convert the project to the correct version (if you want to use it in a newer version, convert the project to that engine version first**. I'll add newer versions in the future)
 - find the files you want to transfer (Atmosphere_mesh for the material version, atmosphere for the post process version
 - select the file(s) and right click on them
 - go to asset actions->migrate
 - when migrating, find the content folder of the project you want to export the assets to
 - select this folder and migrate the files, they should now work
 
-### adding the atmosphere to your scene - material version (atmo_non_post)
+### adding the atmosphere to your scene - material version (atmo_non_post and proportional)
 - drag the atmosphere mesh into the scene
 - scale it until the atmopshere becomes fully visible
 - it uses the atmosphere_instance material instance, you can edit the parameters there
@@ -33,7 +34,10 @@ you can find this by opening the epic games launcher and right clicking any exis
 
 ### changing light direction
 With the material version, you can rotate the StaticMeshInstance to change the light direction.
-with the post process version, you have to change the light_direction parameter
+with the post process version, you have to change the light_direction parameter.
+
+### skylights
+There are skylight versions of both the non_post and proportional atmospheres. These add light to objects inside the atmosphere as if they are receiving light from a skylight. These need to have the exact same settings as the atmosphere, and also need to be applied to the atmosphere_mesh. They also have a shadowing_amount, which determines how much darker a face is that's pointing away from the atmosphere. There's also the option to use distance fields for AO, but this has not been tested, so please report any problems with this.
 
 ### editing parameters
 you can freely edit the parameters of the Material, here's what they do
@@ -55,4 +59,4 @@ you can freely edit the parameters of the Material, here's what they do
 | light_direction| the direction of the light (post process only, as it's not needed with the material version)
 | planet_position| where the atmosphere is, in world space (post process only)
 
-There's also a proportional version of the atmosphere. This makes most parameters dependant on the planet and atmo radius, making it easier to change the size of the atmosphere
+The proportional version makes most parameters dependant on the planet and atmo radius, making it easier to change the size of the atmosphere
