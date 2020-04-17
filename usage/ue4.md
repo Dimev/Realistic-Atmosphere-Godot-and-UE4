@@ -52,7 +52,7 @@ you can freely edit the parameters of the Material, here's what they do
 | planet_radius  | how big the planet is, affects how big the atmosphere is too                                                    
 | atmo_radius 	 | how big the outer sphere is, if set too low, it can cut off the atmosphere, giving an ugly effect
 | beta_ray       | rayleigh scattering paramater, determines the overall color of the atmosphere
-| beta_mie       | mie scattering parameter, determines the color (and intensity) of the blob around the sun
+| beta_mie       | mie scattering parameter, determines the color and intensity of the blob around the sun
 | beta_e         | scale of the parameters (10^scale) before usage, all parameters are multpiplied with 10^beta_e. changing this can improve the look in many cases
 | g              | mie direction, how big the mie blob around the sun is
 | height_ray     | the height scale for rayleigh, how high the rayleigh scattering goes
@@ -64,4 +64,5 @@ you can freely edit the parameters of the Material, here's what they do
 | light_direction| the direction of the light (post process only, as it's not needed with the material version)
 | planet_position| where the atmosphere is, in world space (post process only)
 
-The proportional version makes most parameters dependant on the planet and atmo radius, making it easier to change the size of the atmosphere
+### Proportional version
+The proportional version makes some parameters dependant on the planet and atmo radius. This means you don't have to adjust everything when you scale the planet and atmosphere. Internally it's the same, so with the right setup it looks exactly the same
