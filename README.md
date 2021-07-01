@@ -12,7 +12,7 @@ There's also a [shadertoy version](https://www.shadertoy.com/view/wlBXWK).
 This resporitory provides code for adding realistic admospheres to godot and unreal engine 4.
 The size, color and intensity can all be tuned.
 
-For unreal engine 4, a project including all needed assets is given (for version 4.22.3)
+For unreal engine 4, a project including all needed assets is given (for version 4.22.3), as well as a plugin, by @gbeniola 
 For godot, a standalone shader file is given, as well as a demo project
 
 ### usage
