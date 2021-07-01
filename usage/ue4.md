@@ -5,7 +5,7 @@ There are 2 versions, Proportional and non_post
 The proportional version is easier to set up, as it automatically changes the parameters according to the planet_radius
 the fully_blocking and post process versions are not supported, because they don't work correctly (post process version is only in the older demo)
 
-### getting the assets into UE4
+### getting the assets into UE4, from the demo
 - download this resporitory and unzip it, find the zip file for your version, and extract it to where ue4 stores it's projects
 you can find this by opening the epic games launcher and right clicking any existing project, and press 'show in folder'
 - to transfer the files to a project, you'll first have to open the project you downloaded. 
@@ -15,6 +15,10 @@ you can find this by opening the epic games launcher and right clicking any exis
 - go to asset actions->migrate
 - when migrating, find the content folder of the project you want to export the assets to
 - select this folder and migrate the files, they should now work
+
+### From the plugin
+@gbeniola created a plugin version of the assets, with a blueprint that adds the two meshes with the materials on them needed to make the atmosphere work
+This plugin can be added to ue, by following the guide here: https://docs.unrealengine.com/4.26/en-US/ProductionPipelines/Plugins/
 
 ### adding the atmosphere to your scene - material version (atmo_non_post and proportional)
 - drag the atmosphere mesh into the scene
