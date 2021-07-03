@@ -9,7 +9,7 @@ Showcase videos for [godot](https://youtu.be/mKg426Q8iwM) and [ue4](https://yout
 
 There's also a [shadertoy version](https://www.shadertoy.com/view/wlBXWK).
 The repo for that is [here](https://github.com/Dimev/atmosphere-shader).
-I'll make a guide to convert (shadertoy) glsl to ue material custom node later
+Guide for converting shadertoy shaders to unreal is [here](https://github.com/Dimev/shadertoy-to-unreal-engine/edit/main/README.md)
 
 This resporitory provides code for adding realistic admospheres to godot and unreal engine 4.
 The size, color and intensity can all be tuned.
