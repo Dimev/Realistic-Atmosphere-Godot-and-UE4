@@ -5,7 +5,7 @@ Works with both GLES 2 and GLES 3
 
 ### getting the assets into godot
 - make a new shader resource in godot named atmosphere.shader
-- copy all code from [this file](godot/shader/atmosphere.shader) into the file
+- copy all code from [this file](../godot/shader/atmosphere.shader) into the file
 
 ### adding it to a scene
 - add a new MeshInstance to your scene
