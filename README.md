@@ -1,8 +1,10 @@
 # Realistic-Atmosphere-Godot-and-UE4
 A realistic atmosphere material for both the Godot game engine and Unreal Engine 4
 
-This is succeeded by [This guide](https://github.com/Dimev/shadertoy-to-unreal-engine)
+The Unreal version is succeeded by [This guide](https://github.com/Dimev/shadertoy-to-unreal-engine)
 I'll still try and answer issues here, but if you want a more up to date version, then follow the guide.
+
+For Godot, it should be possible to simply copy-paste most of the function from shadertoy into the shader, and adding any missing parameters.
 
 ![planet_1](images/planet_1.png)
 ![planet_3](images/planet_3.png)
