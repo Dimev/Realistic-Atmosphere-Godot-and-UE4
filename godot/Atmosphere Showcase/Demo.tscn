@@ -1,70 +1,61 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://xpfpv34fyvdg"]
 
-[ext_resource path="res://settings_changer.gd" type="Script" id=1]
-[ext_resource path="res://Atmosphere/atmosphere_v2.gdshader" type="Shader" id=2]
-[ext_resource path="res://Terrain/terrain.gdshader" type="Shader" id=3]
-[ext_resource path="res://camera.gd" type="Script" id=4]
+[ext_resource type="Script" path="res://settings_changer.gd" id="1"]
+[ext_resource type="Shader" path="res://Atmosphere/atmosphere_v2.gdshader" id="2"]
+[ext_resource type="Shader" path="res://Terrain/terrain.gdshader" id="3"]
+[ext_resource type="Script" path="res://camera.gd" id="4"]
 
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 2 )
-shader_param/light_intensity = Vector3( 20, 20, 20 )
-shader_param/planet_radius = 20.0
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("2")
 shader_param/atmo_radius = 25.0
-shader_param/beta_ray = Vector3( 1, 2, 4 )
-shader_param/beta_mie = Vector3( 1, 1, 1 )
-shader_param/beta_ambient = Vector3( 0, 0, 0 )
+shader_param/beta_ambient = Vector3(0, 0, 0)
 shader_param/beta_e = -1.0
-shader_param/g = 0.8
-shader_param/height_ray = 0.5
-shader_param/height_mie = 0.25
+shader_param/beta_mie = Vector3(1, 1, 1)
+shader_param/beta_ray = Vector3(1, 2, 4)
 shader_param/density_multiplier = 1.0
+shader_param/g = 0.8
+shader_param/height_mie = 0.25
+shader_param/height_ray = 0.5
+shader_param/light_intensity = Vector3(20, 20, 20)
+shader_param/planet_radius = 20.0
 shader_param/steps_i = 32
 shader_param/steps_l = 8
 
-[sub_resource type="CubeMesh" id=2]
-material = SubResource( 1 )
+[sub_resource type="BoxMesh" id="2"]
+material = SubResource("1")
 flip_faces = true
-size = Vector3( 50, 50, 50 )
+size = Vector3(50, 50, 50)
 
-[sub_resource type="ShaderMaterial" id=3]
-shader = ExtResource( 3 )
+[sub_resource type="ShaderMaterial" id="3"]
+render_priority = 0
+shader = ExtResource("3")
 shader_param/terrain_scale = 0.8
 
-[sub_resource type="SphereMesh" id=4]
-material = SubResource( 3 )
+[sub_resource type="SphereMesh" id="4"]
+material = SubResource("3")
 radius = 20.0
 height = 40.0
 radial_segments = 128
 rings = 64
 
-[node name="Demo" type="Spatial"]
-script = ExtResource( 1 )
+[node name="Demo" type="Node3D"]
+script = ExtResource("1")
 
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
+[node name="DirectionalLight" type="DirectionalLight3D" parent="."]
 
-[node name="AtmoMesh" type="MeshInstance" parent="."]
-mesh = SubResource( 2 )
-material/0 = null
+[node name="AtmoMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("2")
 
-[node name="PlanetMesh" type="MeshInstance" parent="AtmoMesh"]
-mesh = SubResource( 4 )
-material/0 = null
+[node name="PlanetMesh" type="MeshInstance3D" parent="AtmoMesh"]
+mesh = SubResource("4")
 
-[node name="Camera" type="Camera" parent="AtmoMesh"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50 )
+[node name="Camera" type="Camera3D" parent="AtmoMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
 current = true
-script = ExtResource( 4 )
+script = ExtResource("4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 256.0
-margin_bottom = 42.0
 bbcode_enabled = true
-bbcode_text = "[color=gray]Press escape to close
-"
 text = "Press escape to close
 "
-__meta__ = {
-"_edit_use_anchors_": false
-}
