@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://settings_changer.gd" type="Script" id=1]
-[ext_resource path="res://Atmosphere/atmosphere_v2.shader" type="Shader" id=2]
-[ext_resource path="res://Terrain/terrain.shader" type="Shader" id=3]
+[ext_resource path="res://Atmosphere/atmosphere_v2.gdshader" type="Shader" id=2]
+[ext_resource path="res://Terrain/terrain.gdshader" type="Shader" id=3]
 [ext_resource path="res://camera.gd" type="Script" id=4]
 
 [sub_resource type="ShaderMaterial" id=1]
