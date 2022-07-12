@@ -1,6 +1,6 @@
 extends Node
 
-export(float) var speed = 2.0
+@export var speed : float = 2.0
 var set = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -9,7 +9,7 @@ func _ready():
 	$AtmoMesh/Camera.speed = speed
 
 func _process(_delta):
-	var time = ((OS.get_ticks_msec() * speed) / 10000.0) - 10.0
+	var time = ((Time.get_ticks_msec() * speed) / 10000.0) - 10.0
 	# leave the default colors
 	if time > 2.0 * PI and set == 0:
 		$AtmoMesh.mesh.get_material().set_shader_param("beta_ray", Vector3(4, 1, 1))
