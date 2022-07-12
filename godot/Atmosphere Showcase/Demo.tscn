@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://xpfpv34fyvdg"]
+[gd_scene load_steps=10 format=3 uid="uid://xpfpv34fyvdg"]
 
 [ext_resource type="Script" path="res://settings_changer.gd" id="1"]
 [ext_resource type="Shader" path="res://Atmosphere/atmosphere_v2.gdshader" id="2"]
 [ext_resource type="Shader" path="res://Terrain/terrain.gdshader" id="3"]
 [ext_resource type="Script" path="res://camera.gd" id="4"]
+[ext_resource type="Environment" path="res://default_env.tres" id="5_c1hy5"]
 
 [sub_resource type="ShaderMaterial" id="1"]
 render_priority = 0
@@ -59,3 +60,6 @@ script = ExtResource("4")
 bbcode_enabled = true
 text = "Press escape to close
 "
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("5_c1hy5")
