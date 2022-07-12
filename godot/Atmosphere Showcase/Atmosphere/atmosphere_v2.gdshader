@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode blend_mix, depth_test_disable, unshaded;
+render_mode blend_mix, depth_test_disabled, unshaded;
 
 uniform vec3 light_intensity = vec3(20.0); // how bright the light is, affects the brightness of the atmosphere
 uniform float planet_radius = 26.0; // the radius of the planet
