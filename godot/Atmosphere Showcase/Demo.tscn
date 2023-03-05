@@ -9,19 +9,19 @@
 [sub_resource type="ShaderMaterial" id="1"]
 render_priority = 0
 shader = ExtResource("2")
-shader_param/atmo_radius = 25.0
-shader_param/beta_ambient = Vector3(0, 0, 0)
-shader_param/beta_e = -1.0
-shader_param/beta_mie = Vector3(1, 1, 1)
-shader_param/beta_ray = Vector3(1, 2, 4)
-shader_param/density_multiplier = 1.0
-shader_param/g = 0.8
-shader_param/height_mie = 0.25
-shader_param/height_ray = 0.5
-shader_param/light_intensity = Vector3(20, 20, 20)
-shader_param/planet_radius = 20.0
-shader_param/steps_i = 32
-shader_param/steps_l = 8
+shader_parameter/light_intensity = Vector3(20, 20, 20)
+shader_parameter/planet_radius = 20.0
+shader_parameter/atmo_radius = 25.0
+shader_parameter/beta_ray = Vector3(1, 2, 4)
+shader_parameter/beta_mie = Vector3(1, 1, 1)
+shader_parameter/beta_ambient = Vector3(0, 0, 0)
+shader_parameter/beta_e = -1.0
+shader_parameter/g = 0.8
+shader_parameter/height_ray = 0.5
+shader_parameter/height_mie = 0.25
+shader_parameter/density_multiplier = 1.0
+shader_parameter/steps_i = 32
+shader_parameter/steps_l = 8
 
 [sub_resource type="BoxMesh" id="2"]
 material = SubResource("1")
@@ -31,7 +31,7 @@ size = Vector3(50, 50, 50)
 [sub_resource type="ShaderMaterial" id="3"]
 render_priority = 0
 shader = ExtResource("3")
-shader_param/terrain_scale = 0.8
+shader_parameter/terrain_scale = 0.8
 
 [sub_resource type="SphereMesh" id="4"]
 material = SubResource("3")

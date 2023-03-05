@@ -1,6 +1,7 @@
 shader_type spatial;
-render_mode depth_test_disable, blend_add, unshaded;
+render_mode depth_test_disabled, blend_add, unshaded;
 
+uniform sampler2D DEPTH_TEXTURE: hint_depth_texture, filter_linear_mipmap;
 // the parameters
 uniform float planet_radius = 20.0;					// how big the planet is
 uniform float atmo_radius = 30.0; 					// how big the atmosphere is
