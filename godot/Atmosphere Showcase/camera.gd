@@ -6,16 +6,22 @@ var speed = 2.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	var time = wrapf(((Time.get_ticks_msec() * speed) / 10000.0) - 10.0, 0.0, 2.0 * PI)
-	if time < PI + 0.6:
-		var pos = Vector3(sin(time) * outer, 0.0, cos(time) * outer)
-		transform = Transform3D(Basis(Vector3(0.0, 1.0, 0.0), time), pos)
-	elif time < 2 * PI:
-		var pos = Vector3(sin(time) * inner, 0.0, cos(time) * inner)
-		var orientation = Basis(
-			Vector3(0.0, 0.0, 1.0), -0.5 * PI).rotated(
-				Vector3(0.0, 1.0, 0.0), time - 0.5 * PI)
-		transform = Transform3D(orientation, pos)
+	
+	# get the time of the animation, wrapping every 10 seconds
+	var time = wrapf(((Time.get_ticks_msec() * speed) / 100000.0), 0.0, 1.0)
+	
+	# the rotation of the camera
+	var phase = time * 2 * TAU
+	
+	# the rotation of the camera as a vector
+	var angle = Vector3(sin(phase), 0.0, cos(phase))
+	
+	if time > 0.5:
+		var orientation = Basis.looking_at(-angle).rotated(angle, -PI / 2).rotated(Vector3.UP, -PI / 2)
+		transform = Transform3D(orientation, angle * inner)
+	else:
+		var orientation = Basis.looking_at(-angle)
+		transform = Transform3D(orientation, angle * outer)
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()

@@ -1,6 +1,10 @@
 shader_type spatial;
-render_mode blend_mix, depth_test_disable, unshaded;
+render_mode blend_mix, depth_test_disabled, unshaded;
 
+// depth texture, needed for proper blending
+uniform sampler2D depth_texture: hint_depth_texture, filter_linear_mipmap;
+
+// Parameters
 uniform vec3 light_intensity = vec3(20.0); // how bright the light is, affects the brightness of the atmosphere
 uniform float planet_radius = 26.0; // the radius of the planet
 uniform float atmo_radius = 32.0; // the radius of the atmosphere
@@ -162,10 +166,12 @@ void vertex() {
 void fragment() {
 	
 	// get the scene depth (what is the maximum ray length)
-	float depth = textureLod(DEPTH_TEXTURE, SCREEN_UV, 0.0).r;
-	vec4 upos = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, depth * 2.0 - 1.0, 1.0);
-	vec3 pixel_position = upos.xyz / upos.w;
-	float max_distance = length(pixel_position);
+	// https://docs.godotengine.org/en/stable/tutorials/shaders/advanced_postprocessing.html#depth-texture
+	float depth = texture(depth_texture, SCREEN_UV).r;
+	vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
+	vec4 view = INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
+	view.xyz /= view.w;
+	float max_distance = length(view);
 	
 	// calculate the scattering towards the camera
 	vec4 atm = calculate_scattering(cam_position, VIEW, max_distance, light_direction);

@@ -1,14 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://xpfpv34fyvdg"]
+[gd_scene load_steps=10 format=3 uid="uid://hjd407bewuje"]
 
 [ext_resource type="Script" path="res://settings_changer.gd" id="1"]
-[ext_resource type="Shader" path="res://Atmosphere/atmosphere_v2.gdshader" id="2"]
+[ext_resource type="Shader" path="res://Atmosphere/atmosphere.gdshader" id="2_2lxo4"]
 [ext_resource type="Shader" path="res://Terrain/terrain.gdshader" id="3"]
 [ext_resource type="Script" path="res://camera.gd" id="4"]
 [ext_resource type="Environment" path="res://default_env.tres" id="5_c1hy5"]
 
 [sub_resource type="ShaderMaterial" id="1"]
 render_priority = 0
-shader = ExtResource("2")
+shader = ExtResource("2_2lxo4")
 shader_parameter/light_intensity = Vector3(20, 20, 20)
 shader_parameter/planet_radius = 20.0
 shader_parameter/atmo_radius = 25.0
@@ -21,35 +21,38 @@ shader_parameter/height_ray = 0.5
 shader_parameter/height_mie = 0.25
 shader_parameter/density_multiplier = 1.0
 shader_parameter/steps_i = 32
-shader_parameter/steps_l = 8
+shader_parameter/steps_l = 4
 
 [sub_resource type="BoxMesh" id="2"]
 material = SubResource("1")
 flip_faces = true
 size = Vector3(50, 50, 50)
 
-[sub_resource type="ShaderMaterial" id="3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2cple"]
 render_priority = 0
 shader = ExtResource("3")
 shader_parameter/terrain_scale = 0.8
+shader_parameter/min_height = 20.0
+shader_parameter/max_height = 21.0
 
-[sub_resource type="SphereMesh" id="4"]
-material = SubResource("3")
-radius = 20.0
-height = 40.0
-radial_segments = 128
-rings = 64
+[sub_resource type="BoxMesh" id="BoxMesh_7cine"]
+material = SubResource("ShaderMaterial_2cple")
+size = Vector3(50, 50, 50)
+subdivide_width = 128
+subdivide_height = 128
+subdivide_depth = 128
 
 [node name="Demo" type="Node3D"]
 script = ExtResource("1")
 
 [node name="DirectionalLight" type="DirectionalLight3D" parent="."]
+shadow_enabled = true
 
 [node name="AtmoMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("2")
 
 [node name="PlanetMesh" type="MeshInstance3D" parent="AtmoMesh"]
-mesh = SubResource("4")
+mesh = SubResource("BoxMesh_7cine")
 
 [node name="Camera" type="Camera3D" parent="AtmoMesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)

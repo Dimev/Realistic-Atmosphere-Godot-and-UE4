@@ -9,26 +9,28 @@ func _ready():
 	$AtmoMesh/Camera.speed = speed
 
 func _process(_delta):
-	var time = ((Time.get_ticks_msec() * speed) / 10000.0) - 10.0
+	# get the time of the animation, wrapping every 10 seconds
+	var time = ((Time.get_ticks_msec() * speed) / 100000.0)
+	
 	# leave the default colors
-	if time > 2.0 * PI and set == 0:
-		$AtmoMesh.mesh.get_material().set_shader_param("beta_ray", Vector3(4, 1, 1))
+	if time > 1 and set == 0:
+		$AtmoMesh.mesh.get_material().set_shader_parameter("beta_ray", Vector3(4, 1, 1))
 		set = 1
-	elif time > 2.0 * PI + 1 and set == 1:
-		$AtmoMesh.mesh.get_material().set_shader_param("beta_ray", Vector3(1, 4, 2))
+	elif time > 1.1 and set == 1:
+		$AtmoMesh.mesh.get_material().set_shader_parameter("beta_ray", Vector3(1, 4, 2))
 		set = 2
-	elif time > 2.0 * PI + 2 and set == 2:
-		$AtmoMesh.mesh.get_material().set_shader_param("beta_ray", Vector3(4, 1, 2))
-		$AtmoMesh.mesh.get_material().set_shader_param("intensity", 10.0)
+	elif time > 1.2 * PI + 2 and set == 2:
+		$AtmoMesh.mesh.get_material().set_shader_parameter("beta_ray", Vector3(4, 1, 2))
+		$AtmoMesh.mesh.get_material().set_shader_parameter("intensity", 10.0)
 		set = 3
-	elif time > 2.0 * PI + 3 and set == 3:
-		$AtmoMesh.mesh.get_material().set_shader_param("beta_ray", Vector3(4, 2, 1))
-		$AtmoMesh.mesh.get_material().set_shader_param("beta_mie", Vector3(1, 4, 1))
-		$AtmoMesh.mesh.get_material().set_shader_param("mie_g", 0.6)
+	elif time > 1.3 * PI + 3 and set == 3:
+		$AtmoMesh.mesh.get_material().set_shader_parameter("beta_ray", Vector3(4, 2, 1))
+		$AtmoMesh.mesh.get_material().set_shader_parameter("beta_mie", Vector3(1, 4, 1))
+		$AtmoMesh.mesh.get_material().set_shader_parameter("mie_g", 0.6)
 		set = 4
-	elif time > 2.0 * PI + 5 and set == 4:
-		$AtmoMesh.mesh.get_material().set_shader_param("beta_ray", Vector3(1, 1, 3))
-		$AtmoMesh.mesh.get_material().set_shader_param("beta_mie", Vector3(4, 1, 1))
-		$AtmoMesh.mesh.get_material().set_shader_param("mie_g", 0.8)
-		$AtmoMesh.mesh.get_material().set_shader_param("intensity", 6.0)
+	elif time > 1.4 and set == 4:
+		$AtmoMesh.mesh.get_material().set_shader_parameter("beta_ray", Vector3(1, 1, 3))
+		$AtmoMesh.mesh.get_material().set_shader_parameter("beta_mie", Vector3(4, 1, 1))
+		$AtmoMesh.mesh.get_material().set_shader_parameter("mie_g", 0.8)
+		$AtmoMesh.mesh.get_material().set_shader_parameter("intensity", 6.0)
 		set = 5
