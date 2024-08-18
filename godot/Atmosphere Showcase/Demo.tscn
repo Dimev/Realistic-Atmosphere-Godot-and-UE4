@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://hjd407bewuje"]
+[gd_scene load_steps=12 format=3 uid="uid://hjd407bewuje"]
 
 [ext_resource type="Script" path="res://settings_changer.gd" id="1"]
 [ext_resource type="Shader" path="res://Atmosphere/atmosphere.gdshader" id="2_2lxo4"]
@@ -42,6 +42,11 @@ subdivide_width = 128
 subdivide_height = 128
 subdivide_depth = 128
 
+[sub_resource type="SystemFont" id="SystemFont_fylws"]
+font_names = PackedStringArray("Monospace")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_o4do7"]
+
 [node name="Demo" type="Node3D"]
 script = ExtResource("1")
 
@@ -60,9 +65,16 @@ current = true
 script = ExtResource("4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = SubResource("SystemFont_fylws")
 bbcode_enabled = true
-text = "Press escape to close
+text = "Press ESC to close
 "
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("5_c1hy5")
+camera_attributes = SubResource("CameraAttributesPractical_o4do7")
