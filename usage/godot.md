@@ -1,8 +1,6 @@
 # Usage with godot
 How to get the atmosphere woking in godot.
 
-Works with both GLES 2 and GLES 3
-
 ### getting the assets into godot
 - make a new shader resource in godot named atmosphere.shader
 - copy all code from [this file](../godot/shader/atmosphere.shader) into the file
@@ -36,8 +34,3 @@ you can freely edit the parameters of the ShaderMaterial, here's what they do
 | steps_l        | light ray steps, affects the sunset quality, 4 is the lowest before the quality becomes visibly worse (more is better, but slower)
 | intensity      | the light intensity, makes the atmosphere brighet
 
-### known issues
-with very big atmospheres, it can give strange artifacts when the camera goes too far away. 
-setting the near clip value of the camera to something higher can help, but it does not solve the issue
-This has to do with how Godot renders objects, and I can't do anything about it.
-This might be solved when vulkan comes out.
