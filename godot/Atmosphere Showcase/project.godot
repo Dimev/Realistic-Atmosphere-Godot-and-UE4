@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Atmosphere Showcase"
 run/main_scene="res://Demo.tscn"
-config/features=PackedStringArray("4.3")
+config/features=PackedStringArray("4.4")
 config/icon="res://icon.png"
 
 [display]
@@ -21,6 +21,7 @@ window/size/fullscreen=true
 
 [rendering]
 
+anti_aliasing/quality/screen_space_aa=1
 quality/shadows/filter_mode=2
 quality/filters/msaa=4
 environment/default_environment="res://default_env.tres"

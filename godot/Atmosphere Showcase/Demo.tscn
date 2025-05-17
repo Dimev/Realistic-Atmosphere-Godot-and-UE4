@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://hjd407bewuje"]
 
-[ext_resource type="Script" path="res://settings_changer.gd" id="1"]
-[ext_resource type="Shader" path="res://Atmosphere/atmosphere.gdshader" id="2_2lxo4"]
-[ext_resource type="Shader" path="res://Terrain/terrain.gdshader" id="3"]
-[ext_resource type="Script" path="res://camera.gd" id="4"]
-[ext_resource type="Environment" path="res://default_env.tres" id="5_c1hy5"]
+[ext_resource type="Script" uid="uid://cop371dkuu8eq" path="res://settings_changer.gd" id="1"]
+[ext_resource type="Shader" uid="uid://co2wd5nuyie85" path="res://Atmosphere/atmosphere.gdshader" id="2_2lxo4"]
+[ext_resource type="Shader" uid="uid://6jqi3p0h740g" path="res://Terrain/terrain.gdshader" id="3"]
+[ext_resource type="Script" uid="uid://d01m051vr0oof" path="res://camera.gd" id="4"]
+[ext_resource type="Environment" uid="uid://d3k0rao7tdedy" path="res://default_env.tres" id="5_c1hy5"]
 
 [sub_resource type="ShaderMaterial" id="1"]
 render_priority = 0
